@@ -1,0 +1,14 @@
+{
+  "name": "bruca-lp",
+  "version": "1.0.0",
+  "description": "Landing page for BRUCA coffee pre-sale",
+  "type": "module",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'No build step required for static site'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.14"
+  },
+  "devDependencies": {}
+}
