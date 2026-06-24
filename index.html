@@ -2278,11 +2278,9 @@ if (reservaForm) {
       validateField('email',    function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }),
       validateField('cep',      function(v) { return v.replace(/\D/g,'').length === 8; }),
     ];
-    if (validations.indexOf(false) !== -1) {
-      var firstErr = document.querySelector('.form-field.has-error');
-      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
+   if (typeof fbq === 'function') {
+  fbq('track', 'Lead');
+}
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
 
