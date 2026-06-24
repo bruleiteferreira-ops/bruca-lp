@@ -2271,6 +2271,9 @@ const submitBtn   = document.getElementById('form-submit-btn');
 
 if (reservaForm) {
   reservaForm.addEventListener('submit', function(e) {
+    if (typeof fbq === 'function') {
+  fbq('track', 'Lead');
+}
     e.preventDefault();
     var validations = [
       validateField('nome',     function(v) { return v.trim().length >= 2; }),
