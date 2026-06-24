@@ -2271,10 +2271,11 @@ const submitBtn   = document.getElementById('form-submit-btn');
 
 if (reservaForm) {
   reservaForm.addEventListener('submit', function(e) {
-    if (typeof fbq === 'function') {
-  fbq('track', 'Lead');
-}
-    e.preventDefault();
+ if (validations.indexOf(false) !== -1) {
+  var firstErr = document.querySelector('.form-field.has-error');
+  if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  return;
+}    e.preventDefault();
     var validations = [
       validateField('nome',     function(v) { return v.trim().length >= 2; }),
       validateField('whatsapp', function(v) { return v.replace(/\D/g,'').length >= 10; }),
