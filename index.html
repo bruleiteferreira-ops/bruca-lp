@@ -936,15 +936,6 @@ nav#nav.scrolled .nav-cta:hover{background:var(--burgundy-dk);}
   padding:18px 36px;transition:background .25s;border:none;cursor:pointer;
 }
 .form-success-cta:hover{background:#1EBE58;}
-.form-payment-cta{
-  display:none;align-items:center;justify-content:center;gap:10px;
-  background:var(--mel);color:var(--burgundy-dk);
-  font-family:var(--body);font-size:12px;font-weight:700;
-  letter-spacing:.12em;text-transform:uppercase;
-  padding:18px 36px;transition:background .25s;border:none;cursor:pointer;
-  margin-top:12px;
-}
-.form-payment-cta:hover{background:var(--caramelo);}
 .form-success-note{
   font-size:11px;color:var(--grafite);opacity:.38;
   margin-top:16px;letter-spacing:.04em;
@@ -1950,35 +1941,61 @@ footer{background:var(--grafite);padding:48px var(--sp-sm);text-align:center;}
 
         <!-- ESTADO DE SUCESSO -->
         <div class="form-success" id="form-success" role="alert" aria-live="assertive">
-          <div class="form-success-check" aria-hidden="true">✓</div>
-          <span class="form-success-eyebrow">Reserva confirmada</span>
+          <div class="form-success-check" aria-hidden="true">🎉</div>
+          <span class="form-success-eyebrow">Reserva registrada</span>
           <h3 class="form-success-title">
-            Reserva recebida<br>com sucesso.
+            Sua reserva foi<br>registrada!
           </h3>
           <div class="form-success-divider" aria-hidden="true"></div>
           <p class="form-success-text">
-            Olá, <span class="form-success-name" id="success-nome"></span>! Sua vaga nesta
-            pré-venda foi registrada. Clique abaixo para abrir o WhatsApp. Ao entrar em contato,
-            envie a mensagem: <em style="display:block;margin-top:10px;font-style:italic;opacity:.75;font-size:13px;">"Olá Bruna! Acabei de garantir minha reserva do Kit Degustação BRUCA e gostaria de receber as informações para pagamento."</em>
+            Você está a um passo de garantir seu Kit Degustação BRUCA.<br>
+            <strong style="display:block;margin-top:8px;font-size:13px;opacity:.85;">Escolha como deseja finalizar sua reserva:</strong>
           </p>
-          <a class="form-success-cta" id="whatsapp-redirect"
-             href="https://wa.me/message/5LVO2PS3N2MYJ1"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Finalizar reserva via WhatsApp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-            Finalizar no WhatsApp
-          </a>
-          <a class="form-payment-cta" id="payment-link"
-             href="#"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Pagar agora e garantir minha reserva">
-            Pagar agora e garantir minha reserva
-          </a>
-          <p class="form-success-note">O link abre o WhatsApp com a mensagem pré-preenchida.</p>
+
+          <!-- Opção 1: WhatsApp (Recomendado) -->
+          <div style="margin-bottom:16px;">
+            <p style="font-size:11px;font-weight:600;letter-spacing:.10em;text-transform:uppercase;color:var(--caramelo,#C58B4E);margin-bottom:6px;">🟢 Falar comigo no WhatsApp <span style="font-size:10px;opacity:.7;">(Recomendado)</span></p>
+            <p style="font-size:12px;color:var(--grafite,#2D2A26);opacity:.65;margin-bottom:12px;line-height:1.5;">Tire suas dúvidas, confirme sua reserva e receba um atendimento personalizado.</p>
+            <button class="form-success-cta" id="whatsapp-redirect"
+                    aria-label="Conversar no WhatsApp com a BRUCA">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Conversar no WhatsApp
+            </button>
+          </div>
+
+          <!-- Separador visual "ou" -->
+          <div style="display:flex;align-items:center;gap:10px;margin:4px 0 16px;">
+            <span style="flex:1;height:1px;background:rgba(198,140,78,.2);display:block;"></span>
+            <span style="font-size:11px;color:var(--grafite,#2D2A26);opacity:.4;letter-spacing:.06em;">ou</span>
+            <span style="flex:1;height:1px;background:rgba(198,140,78,.2);display:block;"></span>
+          </div>
+
+          <!-- Opção 2: Mercado Pago -->
+          <div style="margin-bottom:20px;">
+            <p style="font-size:11px;font-weight:600;letter-spacing:.10em;text-transform:uppercase;color:var(--caramelo,#C58B4E);margin-bottom:6px;">🍒 Garantir minha reserva agora</p>
+            <p style="font-size:12px;color:var(--grafite,#2D2A26);opacity:.65;margin-bottom:12px;line-height:1.5;">Finalize sua compra imediatamente e reserve seu kit antes do encerramento da pré-venda.</p>
+            <a href="https://mpago.li/1aRXhkG"
+               target="_blank"
+               rel="noopener noreferrer"
+               id="mercadopago-cta"
+               aria-label="Garantir minha reserva agora via Mercado Pago"
+               style="display:inline-flex;align-items:center;justify-content:center;gap:8px;
+                      background:var(--burgundy,#480902);color:var(--bege-lt,#F5EBD7);
+                      font-family:var(--body,'Inter',sans-serif);font-size:12px;font-weight:700;
+                      letter-spacing:.14em;text-transform:uppercase;
+                      padding:18px 32px;text-decoration:none;
+                      transition:background .25s;width:100%;box-sizing:border-box;">
+              ✨ Garantir minha reserva agora
+            </a>
+          </div>
+
+          <!-- Rodapé de segurança -->
+          <p class="form-success-note">
+            🔒 Pagamento 100% seguro via Mercado Pago.<br>
+            Aceitamos Pix, cartão de crédito e boleto.
+          </p>
         </div>
 
       </div>
@@ -2193,7 +2210,7 @@ footer{background:var(--grafite);padding:48px var(--sp-sm);text-align:center;}
     <a href="https://www.instagram.com/bruca.ce/"
        target="_blank"
        rel="noopener noreferrer"
-       aria-label="Acompanhar a BRUCA no Instagram">Instagram</a>
+       aria-label="Instagram da BRUCA Café de Especialidade">Instagram</a>
   </nav>
   <p class="footer-copy">© 2026 BRUCA Café de Especialidade. Todos os direitos reservados.</p>
 </footer>
@@ -2229,21 +2246,17 @@ function trackPixel(eventName) {
 
 // ── Abrir WhatsApp + disparar Contact ────────────────────────────────────────
 var WA_LINK = 'https://wa.me/message/5LVO2PS3N2MYJ1';
-var PAYMENT_LINK = ''; // Cole aqui o link de pagamento quando estiver pronto.
 var waOpened = false; // guard: dispara Contact apenas uma vez
 
-function registerContactEvent() {
+function openWhatsApp() {
   if (!waOpened) {
     waOpened = true;
+    // Disparar fbq Contact
     trackPixel('Contact');
+    // Disparar GA4 contact
     trackGA('contact', { method: 'whatsapp' });
   }
-}
-
-function openWhatsApp() {
-  registerContactEvent();
-  // Usar location.href no redirecionamento automático reduz bloqueio de pop-up em celular.
-  window.location.href = WA_LINK;
+  window.open(WA_LINK, '_blank', 'noopener,noreferrer');
 }
 
 // ── NAV: scroll behavior ─────────────────────────────────────────────────────
@@ -2390,11 +2403,32 @@ if (reservaForm) {
 
     // Coletar dados
     var nome      = document.getElementById('nome').value.trim();
+    var whatsapp  = document.getElementById('whatsapp').value.trim();
+    var email     = document.getElementById('email').value.trim();
+    var cep       = document.getElementById('cep').value.trim();
     var nomeFirst = nome.split(' ')[0];
 
     // ── Disparar fbq('track', 'Lead') — SOMENTE APÓS VALIDAÇÕES OK ──────────
     trackPixel('Lead');
     trackGA('generate_lead', { event_category: 'form', event_label: 'reserva_bruca' });
+
+    // ── Enviar lead para Google Sheets (não bloqueia o fluxo) ────────────────
+    var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwW7b9iYa6dVJF63ecgb7mf3GKeApAKESd9OCMKseWV_Zo8DYeY5R9aA0e-KveTe9_QQA/exec';
+    var leadData = {
+      nome:     nome,
+      whatsapp: whatsapp,
+      email:    email,
+      cep:      cep,
+      origem:   'LP BRUCA - Pré-venda'
+    };
+    fetch(SHEETS_URL, {
+      method:  'POST',
+      mode:    'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body:    JSON.stringify(leadData)
+    }).catch(function() {
+      // Falha silenciosa — fluxo continua normalmente
+    });
 
     // Processar após breve delay (UX)
     setTimeout(function() {
@@ -2404,23 +2438,12 @@ if (reservaForm) {
       if (successNome) successNome.textContent = nomeFirst;
 
       // Configurar botão WhatsApp no estado de sucesso
-      // → dispara Contact quando clicado e abre o link direto
+      // → dispara Contact quando clicado
       var waBtn = document.getElementById('whatsapp-redirect');
       if (waBtn) {
-        waBtn.href = WA_LINK;
-        waBtn.onclick = function() {
-          registerContactEvent();
-        };
-      }
-
-      // Preparar botão de pagamento quando o link existir
-      var paymentBtn = document.getElementById('payment-link');
-      if (paymentBtn && PAYMENT_LINK) {
-        paymentBtn.href = PAYMENT_LINK;
-        paymentBtn.style.display = 'inline-flex';
-        paymentBtn.onclick = function() {
-          trackPixel('InitiateCheckout');
-          trackGA('begin_checkout', { currency: 'BRL', value: 159.90 });
+        waBtn.onclick = function(e) {
+          e.preventDefault();
+          openWhatsApp();  // dispara fbq Contact + abre WA
         };
       }
 
@@ -2431,7 +2454,7 @@ if (reservaForm) {
 
       // Redirect automático após 3 segundos → dispara Contact
       setTimeout(function() {
-        openWhatsApp();  // dispara fbq Contact + redireciona para WA
+        openWhatsApp();  // dispara fbq Contact + abre WA
       }, 3000);
 
     }, 1200);
