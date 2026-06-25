@@ -2382,7 +2382,7 @@ if (reservaForm) {
   reservaForm.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Validar todos os campos obrigatórios
+    // 1. Validar todos os campos obrigatórios
     var validations = [
       validateField('nome',     function(v) { return v.trim().length >= 2; }),
       validateField('whatsapp', function(v) { return v.replace(/\D/g,'').length >= 10; }),
@@ -2390,29 +2390,29 @@ if (reservaForm) {
       validateField('cep',      function(v) { return v.replace(/\D/g,'').length === 8; }),
     ];
 
-    // Se houver erro, scroll ao primeiro campo inválido
     if (validations.indexOf(false) !== -1) {
       var firstErr = document.querySelector('.form-field.has-error');
       if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
 
-    // Bloquear botão + spinner
+    // 2. Bloquear botão + spinner
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
 
-    // Coletar dados
+    // 3. Coletar dados do formulário
     var nome      = document.getElementById('nome').value.trim();
     var whatsapp  = document.getElementById('whatsapp').value.trim();
     var email     = document.getElementById('email').value.trim();
     var cep       = document.getElementById('cep').value.trim();
     var nomeFirst = nome.split(' ')[0];
 
-    // ── Disparar fbq('track', 'Lead') — SOMENTE APÓS VALIDAÇÕES OK ──────────
+    // 4. Disparar eventos de rastreamento (após validações OK)
     trackPixel('Lead');
     trackGA('generate_lead', { event_category: 'form', event_label: 'reserva_bruca' });
 
-    // ── Enviar lead para Google Sheets (não bloqueia o fluxo) ────────────────
+    // 5. Enviar para Google Sheets — fire-and-forget, antes de qualquer delay
+    //    Se falhar, o fluxo continua normalmente (catch silencioso)
     var SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwW7b9iYa6dVJF63ecgb7mf3GKeApAKESd9OCMKseWV_Zo8DYeY5R9aA0e-KveTe9_QQA/exec';
     var leadData = {
       nome:     nome,
@@ -2421,43 +2421,40 @@ if (reservaForm) {
       cep:      cep,
       origem:   'LP BRUCA - Pré-venda'
     };
-    fetch(SHEETS_URL, {
-      method:  'POST',
-      mode:    'no-cors',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body:    JSON.stringify(leadData)
-    }).catch(function() {
-      // Falha silenciosa — fluxo continua normalmente
-    });
+    try {
+      fetch(SHEETS_URL, {
+        method:  'POST',
+        mode:    'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body:    JSON.stringify(leadData)
+      }).catch(function() {});
+    } catch(err) {}
 
-    // Processar após breve delay (UX)
+    // 6. Exibir tela de sucesso após 800ms (UX feedback)
+    //    SEM redirect automático — usuário escolhe entre WhatsApp e Mercado Pago
     setTimeout(function() {
 
-      // Personalizar estado de sucesso
+      // Personalizar nome na tela de sucesso
       var successNome = document.getElementById('success-nome');
       if (successNome) successNome.textContent = nomeFirst;
 
-      // Configurar botão WhatsApp no estado de sucesso
-      // → dispara Contact quando clicado
+      // Configurar botão WhatsApp → dispara Contact ao clicar
       var waBtn = document.getElementById('whatsapp-redirect');
       if (waBtn) {
-        waBtn.onclick = function(e) {
-          e.preventDefault();
-          openWhatsApp();  // dispara fbq Contact + abre WA
+        waBtn.onclick = function(ev) {
+          ev.preventDefault();
+          openWhatsApp(); // dispara fbq Contact + abre WA
         };
       }
 
-      // Exibir estado de sucesso
+      // Mostrar tela de sucesso, esconder formulário
       reservaForm.style.display = 'none';
       successDiv.style.display  = 'block';
       successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      // Redirect automático após 3 segundos → dispara Contact
-      setTimeout(function() {
-        openWhatsApp();  // dispara fbq Contact + abre WA
-      }, 3000);
+      // Sem redirect automático: usuário decide entre WhatsApp e Mercado Pago
 
-    }, 1200);
+    }, 800);
   });
 }
 </script>
