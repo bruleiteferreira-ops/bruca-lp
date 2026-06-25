@@ -1,32 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RBS5S5ES8C"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RBS5S5ES8C');
-</script>
-  <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2101484810413197');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2101484810413197&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pré-Venda 2026 | Kit Degustação BRUCA – Reserve com Torra Sob Demanda</title>
@@ -962,6 +936,15 @@ nav#nav.scrolled .nav-cta:hover{background:var(--burgundy-dk);}
   padding:18px 36px;transition:background .25s;border:none;cursor:pointer;
 }
 .form-success-cta:hover{background:#1EBE58;}
+.form-payment-cta{
+  display:none;align-items:center;justify-content:center;gap:10px;
+  background:var(--mel);color:var(--burgundy-dk);
+  font-family:var(--body);font-size:12px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  padding:18px 36px;transition:background .25s;border:none;cursor:pointer;
+  margin-top:12px;
+}
+.form-payment-cta:hover{background:var(--caramelo);}
 .form-success-note{
   font-size:11px;color:var(--grafite);opacity:.38;
   margin-top:16px;letter-spacing:.04em;
@@ -1033,6 +1016,45 @@ footer{background:var(--grafite);padding:48px var(--sp-sm);text-align:center;}
   .reveal,.kit-card,.benefit-card,.test-card,.faq-answer,.faq-toggle{transition:none;}
 }
 </style>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       GOOGLE ANALYTICS 4 — G-RBS5S5ES8C
+       Dispara PageView automaticamente em cada carregamento de página.
+  ═══════════════════════════════════════════════════════════════════ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RBS5S5ES8C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RBS5S5ES8C', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       META PIXEL — ID 2101484810413197
+       Dispara PageView automaticamente em cada carregamento de página.
+       Lead:    disparado após envio do formulário com sucesso.
+       Contact: disparado quando o usuário clica em "Finalizar no WhatsApp"
+                ou quando o redirect automático para WhatsApp é acionado.
+  ═══════════════════════════════════════════════════════════════════ -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2101484810413197');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=2101484810413197&ev=PageView&noscript=1"/>
+  </noscript>
 </head>
 <body>
 
@@ -1939,13 +1961,23 @@ footer{background:var(--grafite);padding:48px var(--sp-sm);text-align:center;}
             pré-venda foi registrada. Clique abaixo para abrir o WhatsApp. Ao entrar em contato,
             envie a mensagem: <em style="display:block;margin-top:10px;font-style:italic;opacity:.75;font-size:13px;">"Olá Bruna! Acabei de garantir minha reserva do Kit Degustação BRUCA e gostaria de receber as informações para pagamento."</em>
           </p>
-          <button class="form-success-cta" id="whatsapp-redirect"
-                  aria-label="Finalizar reserva via WhatsApp">
+          <a class="form-success-cta" id="whatsapp-redirect"
+             href="https://wa.me/message/5LVO2PS3N2MYJ1"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Finalizar reserva via WhatsApp">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
             Finalizar no WhatsApp
-          </button>
+          </a>
+          <a class="form-payment-cta" id="payment-link"
+             href="#"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Pagar agora e garantir minha reserva">
+            Pagar agora e garantir minha reserva
+          </a>
           <p class="form-success-note">O link abre o WhatsApp com a mensagem pré-preenchida.</p>
         </div>
 
@@ -2158,50 +2190,114 @@ footer{background:var(--grafite);padding:48px var(--sp-sm);text-align:center;}
        target="_blank"
        rel="noopener noreferrer"
        aria-label="Entrar em contato via WhatsApp">Contato</a>
+    <a href="https://www.instagram.com/bruca.ce/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Acompanhar a BRUCA no Instagram">Instagram</a>
   </nav>
   <p class="footer-copy">© 2026 BRUCA Café de Especialidade. Todos os direitos reservados.</p>
 </footer>
 
 <!-- ══ JAVASCRIPT ══════════════════════════════════════════════════════ -->
 <script>
-// NAV scroll
-const nav = document.getElementById('nav');
-function updateNav(){nav.classList.toggle('scrolled',window.scrollY>60);}
-window.addEventListener('scroll',updateNav,{passive:true});
-updateNav();
+/* ═══════════════════════════════════════════════════════════════════════════
+   BRUCA — LP SCRIPT PRINCIPAL
+   Versão corrigida com:
+   · GA4  : G-RBS5S5ES8C  (PageView automático via snippet no <head>)
+   · Pixel : 2101484810413197
+       - PageView → automático via snippet no <head>
+       - Lead    → após envio do formulário com sucesso + validações OK
+       - Contact → ao clicar em "Finalizar no WhatsApp" OU no redirect auto
+═══════════════════════════════════════════════════════════════════════════ */
 
-// FAQ accordion
-function toggleFaq(btn){
-  const item=btn.closest('.faq-item');
-  const open=item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(el=>{
-    el.classList.remove('open');
-    el.querySelector('.faq-btn').setAttribute('aria-expanded','false');
-  });
-  if(!open){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+// ── Helpers de rastreamento ──────────────────────────────────────────────────
+function trackGA(eventName, params) {
+  try {
+    if (typeof gtag === 'function') {
+      gtag('event', eventName, params || {});
+    }
+  } catch(e) { console.warn('GA track error:', e); }
 }
 
-// Scroll reveal
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
-},{threshold:0.10,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function trackPixel(eventName) {
+  try {
+    if (typeof fbq === 'function') {
+      fbq('track', eventName);
+    }
+  } catch(e) { console.warn('Pixel track error:', e); }
+}
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(link=>{
-  link.addEventListener('click',e=>{
-    const t=document.querySelector(link.getAttribute('href'));
-    if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-nav.offsetHeight-16,behavior:'smooth'});}
+// ── Abrir WhatsApp + disparar Contact ────────────────────────────────────────
+var WA_LINK = 'https://wa.me/message/5LVO2PS3N2MYJ1';
+var PAYMENT_LINK = ''; // Cole aqui o link de pagamento quando estiver pronto.
+var waOpened = false; // guard: dispara Contact apenas uma vez
+
+function registerContactEvent() {
+  if (!waOpened) {
+    waOpened = true;
+    trackPixel('Contact');
+    trackGA('contact', { method: 'whatsapp' });
+  }
+}
+
+function openWhatsApp() {
+  registerContactEvent();
+  // Usar location.href no redirecionamento automático reduz bloqueio de pop-up em celular.
+  window.location.href = WA_LINK;
+}
+
+// ── NAV: scroll behavior ─────────────────────────────────────────────────────
+var nav = document.getElementById('nav');
+function updateNav() {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}
+window.addEventListener('scroll', updateNav, { passive: true });
+updateNav();
+
+// ── FAQ accordion ─────────────────────────────────────────────────────────────
+function toggleFaq(btn) {
+  var item = btn.closest('.faq-item');
+  var open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el) {
+    el.classList.remove('open');
+    el.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+  });
+  if (!open) {
+    item.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+// ── Scroll reveal ─────────────────────────────────────────────────────────────
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.10, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+
+// ── Smooth scroll ─────────────────────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    var target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      window.scrollTo({
+        top: target.getBoundingClientRect().top + window.scrollY - nav.offsetHeight - 16,
+        behavior: 'smooth'
+      });
+    }
   });
 });
 
-// ── FORMULÁRIO DE RESERVA — BRUCA (4 campos) ───────────────────────────────
-
-// Máscara WhatsApp
-const whatsappInput = document.getElementById('whatsapp');
+// ── Máscara WhatsApp ─────────────────────────────────────────────────────────
+var whatsappInput = document.getElementById('whatsapp');
 if (whatsappInput) {
   whatsappInput.addEventListener('input', function() {
-    let v = this.value.replace(/\D/g, '');
+    var v = this.value.replace(/\D/g, '');
     if (v.length > 11) v = v.slice(0, 11);
     if      (v.length > 6) v = v.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
     else if (v.length > 2) v = v.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
@@ -2210,39 +2306,39 @@ if (whatsappInput) {
   });
 }
 
-// Máscara CEP
-const cepInput = document.getElementById('cep');
+// ── Máscara CEP ──────────────────────────────────────────────────────────────
+var cepInput = document.getElementById('cep');
 if (cepInput) {
   cepInput.addEventListener('input', function() {
-    let v = this.value.replace(/\D/g, '');
+    var v = this.value.replace(/\D/g, '');
     if (v.length > 8) v = v.slice(0, 8);
     if (v.length > 5) v = v.replace(/^(\d{5})(\d{0,3})/, '$1-$2');
     this.value = v;
   });
 }
 
-// Barra de progresso
-const progressBar = document.getElementById('form-progress-bar');
-const formFields  = ['nome', 'whatsapp', 'email', 'cep'];
+// ── Barra de progresso ────────────────────────────────────────────────────────
+var progressBar = document.getElementById('form-progress-bar');
+var formFields  = ['nome', 'whatsapp', 'email', 'cep'];
 function updateProgress() {
   if (!progressBar) return;
-  const filled = formFields.filter(function(id) {
-    const el = document.getElementById(id);
+  var filled = formFields.filter(function(id) {
+    var el = document.getElementById(id);
     return el && el.value.trim().length > 0;
   }).length;
   progressBar.style.width = Math.round((filled / formFields.length) * 100) + '%';
 }
 formFields.forEach(function(id) {
-  const el = document.getElementById(id);
+  var el = document.getElementById(id);
   if (el) el.addEventListener('input', updateProgress);
 });
 
-// Validação individual
+// ── Validação individual ──────────────────────────────────────────────────────
 function validateField(id, validator) {
-  const fieldEl = document.getElementById('field-' + id);
-  const inputEl = document.getElementById(id);
+  var fieldEl = document.getElementById('field-' + id);
+  var inputEl = document.getElementById(id);
   if (!fieldEl || !inputEl) return true;
-  const valid = validator(inputEl.value);
+  var valid = validator(inputEl.value);
   if (!valid) {
     fieldEl.classList.add('has-error');
     inputEl.classList.add('error');
@@ -2252,59 +2348,95 @@ function validateField(id, validator) {
   return valid;
 }
 function clearFieldError(id) {
-  const fieldEl = document.getElementById('field-' + id);
-  const inputEl = document.getElementById(id);
+  var fieldEl = document.getElementById('field-' + id);
+  var inputEl = document.getElementById(id);
   if (!fieldEl || !inputEl) return;
   fieldEl.classList.remove('has-error');
   inputEl.classList.remove('error');
 }
 formFields.forEach(function(id) {
-  const el = document.getElementById(id);
+  var el = document.getElementById(id);
   if (!el) return;
   el.addEventListener('input', function() { clearFieldError(id); });
 });
 
-// Envio do formulário
-const reservaForm = document.getElementById('reserva-form');
-const successDiv  = document.getElementById('form-success');
-const submitBtn   = document.getElementById('form-submit-btn');
+// ── Envio do formulário ───────────────────────────────────────────────────────
+var reservaForm = document.getElementById('reserva-form');
+var successDiv  = document.getElementById('form-success');
+var submitBtn   = document.getElementById('form-submit-btn');
 
 if (reservaForm) {
   reservaForm.addEventListener('submit', function(e) {
- if (validations.indexOf(false) !== -1) {
-  var firstErr = document.querySelector('.form-field.has-error');
-  if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  return;
-}    e.preventDefault();
+    e.preventDefault();
+
+    // Validar todos os campos obrigatórios
     var validations = [
       validateField('nome',     function(v) { return v.trim().length >= 2; }),
       validateField('whatsapp', function(v) { return v.replace(/\D/g,'').length >= 10; }),
       validateField('email',    function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }),
       validateField('cep',      function(v) { return v.replace(/\D/g,'').length === 8; }),
     ];
-   if (typeof fbq === 'function') {
-  fbq('track', 'Lead');
-}
+
+    // Se houver erro, scroll ao primeiro campo inválido
+    if (validations.indexOf(false) !== -1) {
+      var firstErr = document.querySelector('.form-field.has-error');
+      if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    // Bloquear botão + spinner
     submitBtn.disabled = true;
     submitBtn.classList.add('loading');
 
+    // Coletar dados
     var nome      = document.getElementById('nome').value.trim();
     var nomeFirst = nome.split(' ')[0];
-    var waLink    = 'https://wa.me/message/5LVO2PS3N2MYJ1';
 
+    // ── Disparar fbq('track', 'Lead') — SOMENTE APÓS VALIDAÇÕES OK ──────────
+    trackPixel('Lead');
+    trackGA('generate_lead', { event_category: 'form', event_label: 'reserva_bruca' });
+
+    // Processar após breve delay (UX)
     setTimeout(function() {
+
+      // Personalizar estado de sucesso
       var successNome = document.getElementById('success-nome');
       if (successNome) successNome.textContent = nomeFirst;
+
+      // Configurar botão WhatsApp no estado de sucesso
+      // → dispara Contact quando clicado e abre o link direto
       var waBtn = document.getElementById('whatsapp-redirect');
-      if (waBtn) { waBtn.onclick = function() { window.open(waLink, '_blank'); }; }
+      if (waBtn) {
+        waBtn.href = WA_LINK;
+        waBtn.onclick = function() {
+          registerContactEvent();
+        };
+      }
+
+      // Preparar botão de pagamento quando o link existir
+      var paymentBtn = document.getElementById('payment-link');
+      if (paymentBtn && PAYMENT_LINK) {
+        paymentBtn.href = PAYMENT_LINK;
+        paymentBtn.style.display = 'inline-flex';
+        paymentBtn.onclick = function() {
+          trackPixel('InitiateCheckout');
+          trackGA('begin_checkout', { currency: 'BRL', value: 159.90 });
+        };
+      }
+
+      // Exibir estado de sucesso
       reservaForm.style.display = 'none';
       successDiv.style.display  = 'block';
       successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(function() { window.open(waLink, '_blank'); }, 3000);
+
+      // Redirect automático após 3 segundos → dispara Contact
+      setTimeout(function() {
+        openWhatsApp();  // dispara fbq Contact + redireciona para WA
+      }, 3000);
+
     }, 1200);
   });
 }
-
 </script>
 </body>
 </html>
