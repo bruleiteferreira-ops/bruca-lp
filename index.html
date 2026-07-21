@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Primeira Torra BRUCA | Kit Degustação – Reservas Abertas até 20 de julho</title>
+<title>Primeira Torra BRUCA | Kit Degustação – Reservas Abertas</title>
 <meta name="description" content="Pré-venda exclusiva BRUCA 2026. Três microlotes da safra 2025 torrados sob demanda, exclusivamente para quem reservar. Vagas definidas pela capacidade de torra.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -294,20 +294,20 @@ nav#nav.scrolled .nav-cta:hover{background:var(--burgundy-dk);}
 
 /* Mobile: empilhar verticalmente */
 @media(max-width:640px){
-  .kit-banner{
+.kit-banner{
     flex-direction:column;
     height:auto;
   }
-  .kit-banner-left{
+.kit-banner-left{
     width:100%;
     height:240px;
   }
-  .kit-banner-right{
+.kit-banner-right{
     width:100%;
     height:180px;
   }
-  .kit-banner-divider{ display:none; }
-  .kit-banner-badge{
+.kit-banner-divider{ display:none; }
+.kit-banner-badge{
     top:auto;
     bottom:16px;
     left:50%;
@@ -315,8 +315,8 @@ nav#nav.scrolled .nav-cta:hover{background:var(--burgundy-dk);}
   }
 }
 @media(max-width:960px) and (min-width:641px){
-  .kit-banner{ height:320px; }
-  .kit-banner-left{ width:58%; }
+.kit-banner{ height:320px; }
+.kit-banner-left{ width:58%; }
 }
 .kit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;margin:0 auto;}
 .kit-card{background:var(--bege-lt);border:1px solid rgba(198,140,78,.18);overflow:hidden;transition:transform .35s cubic-bezier(.25,.46,.45,.94),box-shadow .35s;}
@@ -690,30 +690,30 @@ footer{background:var(--grafite);padding:48px var(--sp-sm);text-align:center;}
 
 /* ══ RESPONSIVE ════════════════════════════════════════════════════ */
 @media(max-width:960px){
-  .hero{grid-template-columns:1fr;min-height:auto;}
+.hero{grid-template-columns:1fr;min-height:auto;}
   
-  .hero-left{padding:100px 32px 60px;}
+.hero-left{padding:100px 32px 60px;}
   
-  .kit-grid{grid-template-columns:repeat(2,1fr);gap:24px;}
-  .offer-box{padding:36px 24px;}
-  .form-layout{grid-template-columns:1fr;}
-  .form-trust{position:static;top:auto;}
-  .form-grid{grid-template-columns:1fr;}
-  .form-field.full,.form-field.w-third{grid-column:1;}
-  .form-box{padding:32px 24px;}
+.kit-grid{grid-template-columns:repeat(2,1fr);gap:24px;}
+.offer-box{padding:36px 24px;}
+.form-layout{grid-template-columns:1fr;}
+.form-trust{position:static;top:auto;}
+.form-grid{grid-template-columns:1fr;}
+.form-field.full,.form-field.w-third{grid-column:1;}
+.form-box{padding:32px 24px;}
 }
 @media(max-width:640px){
   nav#nav,nav#nav.scrolled{padding:14px 20px;}
-  .kit-grid{grid-template-columns:1fr;gap:20px;}
-  .hero-left{padding:80px 22px 44px;}
-  .hero-ctas{flex-direction:column;align-items:flex-start;}
-  .btn{padding:16px 32px;}
+.kit-grid{grid-template-columns:1fr;gap:20px;}
+.hero-left{padding:80px 22px 44px;}
+.hero-ctas{flex-direction:column;align-items:flex-start;}
+.btn{padding:16px 32px;}
   
   
-  .form-box{padding:28px 20px;}
+.form-box{padding:28px 20px;}
 }
 @media(prefers-reduced-motion:reduce){
-  .reveal,.kit-card,
+.reveal,.kit-card,
 }
 
 /* ── TIMELINE (linha do tempo) ──────────────────────────────────────────────*/
@@ -996,9 +996,9 @@ footer{background:var(--grafite);padding:48px var(--sp-sm);text-align:center;}
 
 /* Responsivo */
 @media(max-width:640px){
-  .pt-section{ padding:80px 0 90px; }
-  .pt-title{ font-size:clamp(28px,7vw,40px); margin-bottom:36px; }
-  .pt-p{ font-size:15px; }
+.pt-section{ padding:80px 0 90px; }
+.pt-title{ font-size:clamp(28px,7vw,40px); margin-bottom:36px; }
+.pt-p{ font-size:15px; }
 }
 </style>
 
@@ -1127,77 +1127,54 @@ footer{background:var(--grafite);padding:48px var(--sp-sm);text-align:center;}
 
 <!-- 3. CONTADOR REGRESSIVO -->
 
-<section class="bruca-countdown" aria-label="Contador regressivo para encerramento das reservas">
-  <div class="container-xs">
-    <span class="countdown-label">As reservas encerram em</span>
-    <p class="countdown-title">20 de julho de 2026 · 23h59</p>
-    <div class="countdown-grid" id="countdown-grid" aria-live="polite" aria-atomic="true">
-      <div class="countdown-unit">
-        <div class="countdown-num" id="cd-days">--</div>
-        <span class="countdown-unit-label">Dias</span>
-      </div>
-      <div class="countdown-sep" aria-hidden="true">:</div>
-      <div class="countdown-unit">
-        <div class="countdown-num" id="cd-hours">--</div>
-        <span class="countdown-unit-label">Horas</span>
-      </div>
-      <div class="countdown-sep" aria-hidden="true">:</div>
-      <div class="countdown-unit">
-        <div class="countdown-num" id="cd-mins">--</div>
-        <span class="countdown-unit-label">Minutos</span>
-      </div>
-      <div class="countdown-sep" aria-hidden="true">:</div>
-      <div class="countdown-unit">
-        <div class="countdown-num" id="cd-secs">--</div>
-        <span class="countdown-unit-label">Segundos</span>
-      </div>
-    </div>
-    <div id="countdown-ended" class="countdown-ended" style="display:none;" aria-live="assertive">
-      As reservas desta primeira torra foram encerradas.
-    </div>
-  </div>
-</section>
 
-<!-- 4. LINHA DO TEMPO -->
-
-<section class="bruca-timeline" aria-label="Cronograma da Primeira Torra BRUCA">
+<section class="bruca-timeline" aria-label="Como funciona a experiência BRUCA">
   <div class="container-sm">
+    <div class="tl-header reveal">
+      <span class="eyebrow">Da escolha à sua xícara</span>
+      <h2>Uma experiência simples,<br>cuidadosa e rastreável.</h2>
+    </div>
+
     <div class="tl-steps">
       <div class="tl-step reveal">
-        <div class="tl-icon" aria-hidden="true">📅</div>
+        <div class="tl-icon" aria-hidden="true">☕</div>
         <div class="tl-body">
-          <p class="tl-date">29/06/2026</p>
-          <p class="tl-title">Reservas abertas</p>
-          <p class="tl-desc">A primeira torra BRUCA está oficialmente aberta para reservas.</p>
+          <p class="tl-date">01 · Escolha</p>
+          <p class="tl-title">Você garante o seu Kit Degustação</p>
+          <p class="tl-desc">
+            Preencha seus dados, confirme o pedido e reserve três cafés especiais
+            selecionados pela curadoria BRUCA.
+          </p>
         </div>
       </div>
-      <div class="tl-step reveal reveal-delay-1">
-        <div class="tl-icon" aria-hidden="true">📅</div>
-        <div class="tl-body">
-          <p class="tl-date">20/07/2026</p>
-          <p class="tl-title">Encerramento das reservas</p>
-          <p class="tl-desc">Após essa data não será possível incluir novos pedidos nesta produção.</p>
-        </div>
-      </div>
-      <div class="tl-step reveal reveal-delay-2">
+
+      <div class="tl-step reveal">
         <div class="tl-icon" aria-hidden="true">🔥</div>
         <div class="tl-body">
-          <p class="tl-date">21–26/07</p>
-          <p class="tl-title">Torra e preparo dos kits</p>
-          <p class="tl-desc">Os grãos são torrados sob demanda e os kits são embalados exclusivamente para os reservantes.</p>
+          <p class="tl-date">02 · Cuidado</p>
+          <p class="tl-title">Os cafés são preparados com atenção</p>
+          <p class="tl-desc">
+            Organizamos a torra, o envase e a montagem do kit em pequenos lotes,
+            preservando frescor, qualidade e identidade de cada origem.
+          </p>
         </div>
       </div>
-      <div class="tl-step reveal reveal-delay-3">
+
+      <div class="tl-step reveal">
         <div class="tl-icon" aria-hidden="true">📦</div>
         <div class="tl-body">
-          <p class="tl-date">Semana de 27/07</p>
-          <p class="tl-title">Início dos envios</p>
-          <p class="tl-desc">Os kits são despachados com rastreamento, direto ao seu endereço.</p>
+          <p class="tl-date">03 · Experiência</p>
+          <p class="tl-title">O kit segue para você</p>
+          <p class="tl-desc">
+            Você recebe três cafés de produtores brasileiros para descobrir
+            diferentes origens, aromas e sabores no seu dia a dia.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- 5. KIT DEGUSTAÇÃO -->
 
@@ -1208,7 +1185,7 @@ footer{background:var(--grafite);padding:48px var(--sp-sm);text-align:center;}
       <h2 class="kit-h2">Três origens.<br>Três histórias que chegam até você.</h2>
       <p style="font-size:var(--t-body);color:var(--grafite);opacity:.62;max-width:500px;margin:0 auto;">
         Cada embalagem carrega 250g de um microlote único, selecionado pela sua
-        complexidade sensorial e torrado sob demanda após o encerramento das reservas em 20 de julho.
+        complexidade sensorial e torrado sob demanda após o encerramento das reservas em .
       </p>
     </div>
 
@@ -1435,26 +1412,22 @@ required maxlength="9" inputmode="numeric">
           <span class="spinner" aria-hidden="true"></span>
           <span class="btn-text">GARANTIR MINHA RESERVA →</span>
         </button>
-        </button>
 
-<div style="text-align:center;margin:20px 0 16px;">
-  <p style="font-size:13px;margin:0 0 5px;color:#2D2A26;">
-    Kit com 3 cafés especiais de 250 g
-  </p>
+        <div style="text-align:center;margin:20px 0 16px;">
+          <p style="font-size:13px;margin:0 0 5px;color:#2D2A26;">
+            Kit com 3 cafés especiais de 250 g
+          </p>
+          <p style="font-size:34px;font-weight:700;margin:0;color:#480902;">
+            R$ 159,90
+          </p>
+          <p style="font-size:12px;margin:5px 0 0;color:#2D2A26;opacity:.7;">
+            Frete calculado conforme o CEP
+          </p>
+        </div>
 
-  <p style="font-size:34px;font-weight:700;margin:0;color:#480902;">
-    R$ 159,90
-  </p>
-
-  <p style="font-size:12px;margin:5px 0 0;color:#2D2A26;opacity:.7;">
-    Frete calculado conforme o CEP
-  </p>
-</div>
-
-<div class="form-microcopy" aria-label="Informações sobre a reserva">
         <div class="form-microcopy" aria-label="Informações sobre a reserva">
-          <span class="form-microcopy-item">Frete calculado conforme o CEP informado</span>
-          <span class="form-microcopy-item">O pagamento confirma sua participação</span>
+          <span class="form-microcopy-item">Pagamento seguro via Mercado Pago</span>
+          <span class="form-microcopy-item">Produção em pequenos lotes e envio organizado com cuidado</span>
           <span class="form-microcopy-item">Seus dados são usados exclusivamente para esta produção</span>
         </div>
       </div>
@@ -1470,9 +1443,8 @@ required maxlength="9" inputmode="numeric">
       <p class="form-success-text">
         Agora só falta garantir sua participação na Primeira Torra BRUCA.<br>
         <span style="display:block;margin-top:10px;font-size:13px;line-height:1.75;opacity:.75;">
-          As reservas encerram em <strong>20 de julho às 23h59</strong>.
-          Depois dessa data iniciaremos a torra exclusiva deste lote.
-          Os envios acontecerão durante a semana de 27 de julho.
+          Sua reserva continua disponível enquanto houver capacidade nesta primeira torra.
+          Após a confirmação do pagamento, prepararemos a torra fresca. Você receberá as informações de envio após a confirmação do pedido.
         </span>
         <strong style="display:block;margin-top:12px;font-size:13px;opacity:.85;">Escolha como deseja finalizar:</strong>
       </p>
@@ -1512,7 +1484,7 @@ Kit com 3 cafés especiais de 250 g + cards sensoriais
 </p>
 
 <p style="font-size:12px;color:var(--grafite,#2D2A26);opacity:.65;margin-bottom:12px;line-height:1.5;">
-Finalize sua compra imediatamente e reserve seu kit antes do encerramento.
+Finalize sua compra com segurança e confirme seu kit nesta primeira torra.
 </p>
         <a href="https://mpago.li/1aRXhkG" target="_blank" rel="noopener noreferrer"
            id="mercadopago-cta"
@@ -1753,54 +1725,6 @@ if (reservaForm) {
 
 </script>
 
-<script>
-/* ── CONTADOR REGRESSIVO — PRIMEIRA TORRA BRUCA ─────────────────────────────
-   Data alvo: 20 de julho de 2026 às 23:59 (horário de Brasília, UTC-3).
-   Não utiliza cookie nem localStorage — é calculado em tempo real no client.
-   Quando chega a zero, exibe "As reservas desta primeira torra foram encerradas." no lugar do contador.
-────────────────────────────────────────────────────────────────────────────*/
-(function() {
-  // 20/07/2026 23:59:59 BRT = 03:59:59 UTC no dia 21/07/2026
-  var TARGET = new Date('2026-07-21T02:59:59Z'); // UTC equivalente de 23h59 BRT
 
-  var elDays  = document.getElementById('cd-days');
-  var elHours = document.getElementById('cd-hours');
-  var elMins  = document.getElementById('cd-mins');
-  var elSecs  = document.getElementById('cd-secs');
-  var elGrid  = document.getElementById('countdown-grid');
-  var elEnded = document.getElementById('countdown-ended');
-
-  if (!elDays || !elHours || !elMins || !elSecs) return;
-
-  function pad(n) { return n < 10 ? '0' + n : String(n); }
-
-  function tick() {
-    var now  = new Date();
-    var diff = TARGET - now;
-
-    if (diff <= 0) {
-      // Encerrado: ocultar contador, exibir mensagem
-      if (elGrid)  elGrid.style.display  = 'none';
-      if (elEnded) elEnded.style.display = 'block';
-      return;
-    }
-
-    var totalSecs = Math.floor(diff / 1000);
-    var days  = Math.floor(totalSecs / 86400);
-    var hours = Math.floor((totalSecs % 86400) / 3600);
-    var mins  = Math.floor((totalSecs % 3600)  / 60);
-    var secs  = totalSecs % 60;
-
-    elDays.textContent  = pad(days);
-    elHours.textContent = pad(hours);
-    elMins.textContent  = pad(mins);
-    elSecs.textContent  = pad(secs);
-
-    setTimeout(tick, 1000);
-  }
-
-  tick(); // inicia imediatamente
-})();
-</script>
 </body>
 </html>
